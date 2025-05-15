@@ -1,0 +1,198 @@
+:root {
+  /* Base Colors */
+  --vt-c-white: #75e190;
+  --vt-c-white-soft: #baf34a;
+  --vt-c-white-mute: #fbda4b;
+
+  --vt-c-black: #121212;
+  --vt-c-black-soft: #222222;
+  --vt-c-black-mute: #333333;
+
+  /* Vibrant Colors */
+  --vt-c-indigo: #3b5998; /* A deep blue */
+  --vt-c-magenta: #e91e63; /* Bright pink */
+  --vt-c-cyan: #00bcd4; /* Bright cyan */
+  --vt-c-yellow: #ffeb3b; /* Bright yellow */
+  --vt-c-lime-green: #8bc34a; /* Lime green */
+
+  /* Divider and Shadow Colors */
+  --vt-c-divider-light-1: rgba(255, 255, 255, 0.2);
+  --vt-c-divider-light-2: rgba(255, 255, 255, 0.1);
+  --vt-c-divider-dark-1: rgba(0, 0, 0, 0.6);
+  --vt-c-divider-dark-2: rgba(0, 0, 0, 0.3);
+
+  /* Text Colors */
+  --vt-c-text-light-1: #ffffff;
+  --vt-c-text-light-2: rgba(255, 255, 255, 0.7);
+  --vt-c-text-dark-1: var(--vt-c-black);
+  --vt-c-text-dark-2: rgba(0, 0, 0, 0.7);
+
+  /* Accent Colors */
+  --color-accent: var(--vt-c-magenta);
+  --color-highlight: var(--vt-c-yellow);
+  --color-success: var(--vt-c-lime-green);
+  --color-info: var(--vt-c-cyan);
+}
+
+/* semantic color variables for this project */
+:root {
+  --color-background: var(--vt-c-yellow); /* Updated background color */
+  --color-background-soft: var(--vt-c-white-soft);
+  --color-background-mute: var(--vt-c-white-mute);
+
+  --color-border: var(--vt-c-divider-light-2);
+  --color-border-hover: var(--vt-c-divider-light-1);
+
+  --color-heading: var(--vt-c-indigo);
+  --color-text: var(--vt-c-text-light-1);
+
+  --section-gap: 120px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: var(--vt-c-black);
+    --color-background-soft: var(--vt-c-black-soft);
+    --color-background-mute: var(--vt-c-black-mute);
+
+    --color-border: var(--vt-c-divider-dark-2);
+    --color-border-hover: var(--vt-c-divider-dark-1);
+
+    --color-heading: var(--vt-c-text-dark-1);
+    --color-text: var(--vt-c-text-dark-2);
+  }
+}
+
+/* Global Styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--color-text);
+  background: var(--color-background);
+  transition:
+    color 0.5s ease-in-out,
+    background-color 0.5s ease-in-out,
+    border-color 0.5s ease-in-out;
+  line-height: 1.6;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4 {
+  color: var(--color-heading);
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+/* Buttons */
+button {
+  background-color: var(--color-accent);
+  color: var(--vt-c-white);
+  border: none;
+  border-radius: 4px;
+  padding: 12px 20px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--color-highlight);
+}
+
+/* Links */
+a {
+  color: var(--color-info);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-highlight);
+  text-decoration: underline;
+}
+
+/* Section */
+section {
+  margin-top: var(--section-gap);
+  padding: 50px;
+  background: linear-gradient(to right, var(--vt-c-indigo), var(--vt-c-cyan));
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+  text-align: center;
+  color: var(--vt-c-white);
+}
+
+/* Cards */
+.card {
+  background-color: var(--color-background-soft);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.card .card-header {
+  background-color: var(--color-background-mute);
+  padding: 10px;
+  font-weight: bold;
+}
+
+.card .card-body {
+  padding: 20px;
+}
+
+/* Input Fields */
+input,
+textarea,
+select {
+  background-color: var(--vt-c-white);
+  color: var(--vt-c-black);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 10px;
+  margin: 10px 0;
+  width: 100%;
+  transition: border-color 0.3s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--color-accent);
+}
+
+/* Footer */
+footer {
+  background-color: var(--vt-c-black);
+  color: var(--vt-c-white);
+  padding: 20px;
+  text-align: center;
+  margin-top: 60px;
+}
+
+footer a {
+  color: var(--color-info);
+  text-decoration: none;
+  font-weight: bold;
+}

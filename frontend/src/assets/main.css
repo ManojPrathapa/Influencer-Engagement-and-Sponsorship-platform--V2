@@ -1,0 +1,167 @@
+@import './base.css';
+
+/* Global Styles for the App */
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-weight: normal;
+  background: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradient background */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: #fff6a1; /* Slightly light shade of yellow */
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%), linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+  padding: 2rem;
+  transition: background-color 0.3s ease;
+}
+
+/* Links and Green Color class */
+a,
+.green {
+  text-decoration: none;
+  color: #ff4081; /* Vibrant pink */
+  font-weight: bold;
+  transition: 0.4s;
+  padding: 3px;
+  border-radius: 4px;
+}
+
+a:hover,
+.green:hover {
+  background-color: rgba(255, 64, 129, 0.2); /* Light pink hover effect */
+  transform: scale(1.05); /* Subtle scaling effect */
+}
+
+/* Media Queries for Responsiveness */
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    place-items: center;
+    justify-content: center;
+    background: #f0f4f8; /* Light background for contrast */
+    padding: 2rem;
+  }
+
+  #app {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem; /* Space between items */
+    padding: 2rem;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  }
+
+  #app > * {
+    padding: 2rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  #app > *:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@media (max-width: 1023px) {
+  #app {
+    display: block;
+    margin: 20px;
+  }
+}
+
+/* Card Styles */
+.card {
+  background-color: var(--color-background-soft);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.card .card-header {
+  background-color: var(--color-background-mute);
+  padding: 10px;
+  font-weight: bold;
+}
+
+.card .card-body {
+  padding: 20px;
+}
+
+/* Button Styles */
+button {
+  background-color: var(--color-accent);
+  color: var(--vt-c-white);
+  border: none;
+  border-radius: 4px;
+  padding: 12px 20px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--color-highlight);
+}
+
+/* Input Fields */
+input,
+textarea,
+select {
+  background-color: var(--vt-c-white);
+  color: var(--vt-c-black);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 10px;
+  margin: 10px 0;
+  width: 100%;
+  transition: border-color 0.3s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--color-accent);
+}
+
+/* Section Styles */
+section {
+  margin-top: var(--section-gap);
+  padding: 50px;
+  background: linear-gradient(to right, var(--vt-c-indigo), var(--vt-c-cyan));
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+  text-align: center;
+  color: var(--vt-c-white);
+}
+
+/* Footer */
+footer {
+  background-color: var(--vt-c-black);
+  color: var(--vt-c-white);
+  padding: 20px;
+  text-align: center;
+  margin-top: 60px;
+}
+
+footer a {
+  color: var(--color-info);
+  text-decoration: none;
+  font-weight: bold;
+}
