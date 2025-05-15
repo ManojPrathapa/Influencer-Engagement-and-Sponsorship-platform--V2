@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Monthly Activity Report</title>
+</head>
+<body>
+    <h1>Monthly Activity Report for {{ sponsor.company_name }}</h1>
+    <p>Here are the details of your campaigns for the month:</p>
+    <ul>
+        {% for report in report_data %}
+        <li>
+            <h2>{{ report.campaign.name }}</h2>
+            <p>{{ report.campaign.description }}</p>
+            <p>Start Date: {{ report.campaign.start_date }}</p>
+            <p>End Date: {{ report.campaign.end_date }}</p>
+            <p>Budget: {{ report.campaign.budget }}</p>
+            <p>Goals: {{ report.campaign.goals }}</p>
+            <p>Visibility: {{ report.campaign.visibility }}</p>
+            <p>Number of Ad Requests: {{ report.ad_requests|length }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
